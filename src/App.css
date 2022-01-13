@@ -1,9 +1,32 @@
 .App {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-end;
   background-image: url(https://wallpaperaccess.com/full/3136240.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  height: 120vh;
+}
+button {
+  background-color: black;
+  color: white;
+  height: 20px;
+}
+.song-playlist {
+  position: absolute;
+  left: 0;
+  top: 20px;
+}
+
+.song-list {
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+
+.video-responsive {
+  position: absolute;
+  right: 30%;
+  top: 100px;
 }

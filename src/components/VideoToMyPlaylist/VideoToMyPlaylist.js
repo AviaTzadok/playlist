@@ -17,7 +17,7 @@ const VideoToMyPlaylist = ({ id, title, image }) => {
       <img src={image} alt="Logo" />
       {id}
       {title}
-      <button onClick={() => removeVideo(obj)}>X</button>
+      <button onClick={() => removeVideo(id)}>🗑️</button>
     </div>
   );
 };

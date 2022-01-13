@@ -1,10 +1,12 @@
 import React from "react";
-import { useContext, useEffect } from "react";
 import "./Video.css";
+import { useContext, useEffect } from "react";
 import VideoContext from "../../context/VideoContext";
+// import PlayingYouTubeVideoContext from "../../context/PlayingYouTubeVideoContext";
 
 const Video = ({ id, title, image }) => {
-  const { addNewVideo } = useContext(VideoContext);
+  const [{ addNewVideo }, { playVideo }] = useContext(VideoContext);
+
   let obj = {
     id: id,
     title: title,
@@ -17,6 +19,7 @@ const Video = ({ id, title, image }) => {
       {id}
       {title}
       <button onClick={() => addNewVideo(obj)}>+</button>
+      <button onClick={() => playVideo(id)}>8</button>
     </div>
   );
 };

@@ -7,6 +7,7 @@ import Search from "./components/Search/Search";
 import VideoList from "./components/VideoList/VideoList";
 import Playlist from "./components/Playlist/Playlist";
 import VideosOnPlaylist from "./components/VideosOnPlaylist/VideosOnPlaylist";
+import PlayingYouTubeVideo from "./components/PlayingYouTubeVideo/PlayingYouTubeVideo";
 
 let tempItems = [
   // {
@@ -60,28 +61,20 @@ function App() {
   const [videosSelectd, setVideoSelectd] = useState(arrayVideo);
 
   const [videosPlaylist, setVideosPlaylist] = useState([]);
-  const [newVideo, setNewVideo] = useState("");
 
-  const addVideo = (id, title, image) => {
-    return [
-      {
-        ...videosPlaylist,
-        id: id,
-        title: title,
-        image: image,
-      },
-    ];
-  };
+  const [playVideo, setPlayVideo] = useState("");
 
   const handleAddVideo = (obj) => {
-    console.log(obj);
     setVideosPlaylist([...videosPlaylist, obj]);
-    // setVideosPlaylist(addVideo(id, title, image));
-    setNewVideo("");
   };
 
-  const handleRemoveVideo = (obj) => {
-    console.log(obj);
+  const handleRemoveVideo = (id) => {
+    setVideosPlaylist(videosPlaylist.filter((song) => song.id != id));
+  };
+
+  const handlePlayVideo = (id) => {
+    console.log(id);
+    setPlayVideo(id);
   };
 
   // const onSearch = async (videoToSearch) => {
@@ -92,9 +85,7 @@ function App() {
   //   });
   //   console.log(response);
 
-  // let items = response.data.items;
-
-  // setVideoSelectd(arrayVideo);
+  // setVideoSelectd(response.data.items);
   // };
 
   return (
@@ -103,8 +94,15 @@ function App() {
         <VideosOnPlaylist videosPlaylist={videosPlaylist} />
       </RemoveVideoContext.Provider>
 
+      <PlayingYouTubeVideo playVideo={playVideo} />
+
       {/* <Search onSearch={onSearch} /> */}
-      <VideoContext.Provider value={{ addNewVideo: handleAddVideo }}>
+      <VideoContext.Provider
+        value={[
+          { addNewVideo: handleAddVideo },
+          { playVideo: handlePlayVideo },
+        ]}
+      >
         <VideoList videosSelectd={videosSelectd} />
       </VideoContext.Provider>
     </div>
