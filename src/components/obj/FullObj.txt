@@ -1,0 +1,226 @@
+{
+    "data": {
+        "kind": "youtube#searchListResponse",
+        "etag": "LLxoYd9FIPFtfv5MMEFxCUDuNoU",
+        "nextPageToken": "CAUQAA",
+        "regionCode": "IL",
+        "pageInfo": {
+            "totalResults": 1000000,
+            "resultsPerPage": 5
+        },
+        "items": [
+            {
+                "kind": "youtube#searchResult",
+                "etag": "48JDh2MHa5UOuGqGy5hT03tiAck",
+                "id": {
+                    "kind": "youtube#video",
+                    "videoId": "5fetvrF3HHE"
+                },
+                "snippet": {
+                    "publishedAt": "2022-01-12T18:59:56Z",
+                    "channelId": "UC41GHsi-F40DiDT2DFAWW0w",
+                    "title": "If My Family Runs a Cardboard House! Funny Situations",
+                    "description": "Subscribe Here: https://www.youtube.com/channel/UC41GHsi-F40DiDT2DFAWW0w?sub_confirmation=1 Follow WooHoo: ...",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/5fetvrF3HHE/default_live.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/5fetvrF3HHE/mqdefault_live.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/5fetvrF3HHE/hqdefault_live.jpg",
+                            "width": 480,
+                            "height": 360
+                        }
+                    },
+                    "channelTitle": "WooHoo",
+                    "liveBroadcastContent": "live",
+                    "publishTime": "2022-01-12T18:59:56Z"
+                }
+            },
+            {
+                "kind": "youtube#searchResult",
+                "etag": "veZjcnyWhA9ZeXfuGvrhZpI0-bQ",
+                "id": {
+                    "kind": "youtube#video",
+                    "videoId": "kmbKM-7N1K8"
+                },
+                "snippet": {
+                    "publishedAt": "2022-01-12T16:00:14Z",
+                    "channelId": "UCBJuxfqZuiibvcwSc8ViGsQ",
+                    "title": "Adley &amp; Niko BRAiN GAME!!  Finding Memories in JELLO a family 2021 recap and fun review THE MOViE 🍿",
+                    "description": "Sharing favorite memories from last year! LET'S BE FRIENDS -- https://goo.gl/a7ctjJ HEY EVERYBODY!! Today we are doing a ...",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/kmbKM-7N1K8/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/kmbKM-7N1K8/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/kmbKM-7N1K8/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        }
+                    },
+                    "channelTitle": "A for Adley - Learning & Fun",
+                    "liveBroadcastContent": "none",
+                    "publishTime": "2022-01-12T16:00:14Z"
+                }
+            },
+            {
+                "kind": "youtube#searchResult",
+                "etag": "0DVd37e2VKtiE5dF85cn0eXXexU",
+                "id": {
+                    "kind": "youtube#video",
+                    "videoId": "-x1eZJw15YM"
+                },
+                "snippet": {
+                    "publishedAt": "2022-01-12T16:14:06Z",
+                    "channelId": "UCU60Xt2fvvnc8iDuflmdmpg",
+                    "title": "CHOCOLATE VS COMIDA DE VERDADE | Último a Parar de Comer Ganha! Gigante vs Minúsculo por RATATA COOL",
+                    "description": "Se inscrever: https://www.youtube.com/channel/UCU60Xt2fvvnc8iDuflmdmpg?sub_confirmation=1 Alimentos grandes, médios e ...",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/-x1eZJw15YM/default_live.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/-x1eZJw15YM/mqdefault_live.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/-x1eZJw15YM/hqdefault_live.jpg",
+                            "width": 480,
+                            "height": 360
+                        }
+                    },
+                    "channelTitle": "RATATA COOL Portuguese",
+                    "liveBroadcastContent": "live",
+                    "publishTime": "2022-01-12T16:14:06Z"
+                }
+            },
+            {
+                "kind": "youtube#searchResult",
+                "etag": "W7qKqzKvrWkdlioMu34GEMAjKQA",
+                "id": {
+                    "kind": "youtube#video",
+                    "videoId": "Ersw9J7MCEI"
+                },
+                "snippet": {
+                    "publishedAt": "2022-01-10T10:25:37Z",
+                    "channelId": "UCu4XcDBdnZkV6-5z2f16M0g",
+                    "title": "INTO DUST: The Fight For Water (Based on a Real Story) | Real Stories [4k]",
+                    "description": "When activist Perween Rahman is murdered, her sister Aquila returns to Karachi, Pakistan to investigate, and finds herself caught ...",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/Ersw9J7MCEI/default_live.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/Ersw9J7MCEI/mqdefault_live.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/Ersw9J7MCEI/hqdefault_live.jpg",
+                            "width": 480,
+                            "height": 360
+                        }
+                    },
+                    "channelTitle": "Real Stories",
+                    "liveBroadcastContent": "upcoming",
+                    "publishTime": "2022-01-10T10:25:37Z"
+                }
+            },
+            {
+                "kind": "youtube#searchResult",
+                "etag": "p9gtwwlMSutHbOF_SLnOmKLwSC4",
+                "id": {
+                    "kind": "youtube#video",
+                    "videoId": "vh91ybgqtIQ"
+                },
+                "snippet": {
+                    "publishedAt": "2022-01-10T20:39:42Z",
+                    "channelId": "UCwr5_syYCg_7ZQMxKZCcm3w",
+                    "title": "Live 13/01 às 19h -  A importância de um Detox bem orientado",
+                    "description": "Prepare-se para o evento Os Segredos do Detox, 100% online e gratuito, de 17 a 23 de janeiro! Você já pode realizar sua ...",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/vh91ybgqtIQ/default_live.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/vh91ybgqtIQ/mqdefault_live.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/vh91ybgqtIQ/hqdefault_live.jpg",
+                            "width": 480,
+                            "height": 360
+                        }
+                    },
+                    "channelTitle": "Angela Xavier",
+                    "liveBroadcastContent": "upcoming",
+                    "publishTime": "2022-01-10T20:39:42Z"
+                }
+            }
+        ]
+    },
+    "status": 200,
+    "statusText": "",
+    "headers": {
+        "cache-control": "private",
+        "content-encoding": "gzip",
+        "content-length": "1626",
+        "content-type": "application/json; charset=UTF-8",
+        "date": "Thu, 13 Jan 2022 08:58:20 GMT",
+        "server": "scaffolding on HTTPServer2",
+        "vary": "Origin, X-Origin, Referer"
+    },
+    "config": {
+        "transitional": {
+            "silentJSONParsing": true,
+            "forcedJSONParsing": true,
+            "clarifyTimeoutError": false
+        },
+        "transformRequest": [
+            null
+        ],
+        "transformResponse": [
+            null
+        ],
+        "timeout": 0,
+        "xsrfCookieName": "XSRF-TOKEN",
+        "xsrfHeaderName": "X-XSRF-TOKEN",
+        "maxContentLength": -1,
+        "maxBodyLength": -1,
+        "headers": {
+            "Accept": "application/json, text/plain, */*"
+        },
+        "baseURL": "https://www.googleapis.com/youtube/v3",
+        "params": {
+            "part": "snippet",
+            "maxResults": 5,
+            "key": "AIzaSyC3-IiV9zOMGj4hrKSpxLsMb7lRf1Gp8LE",
+            "q": "a"
+        },
+        "method": "get",
+        "url": "/search"
+    },
+    "request": {}
+}

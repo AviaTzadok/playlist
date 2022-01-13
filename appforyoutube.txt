@@ -1,0 +1,68 @@
+import "./App.css";
+import VideoContext from "./components/context/VideoContext";
+import { useState } from "react";
+import youtubeApi from "./components/api/YouTube";
+import Search from "./components/Search/Search";
+import VideoList from "./components/VideoList/VideoList";
+
+let tempItems=[]
+
+
+function App() {
+  // const videoListData = [{ videoMetaInfo: [], selectedVideoID: null }];
+
+  const [videoSelectd, setVideoSelectd] = useState([]);
+  // const [newVideo, setNewVideo] = useState("");
+
+  // const onSongSelect = (songId) => {
+  //   videoSelectd({
+  //     selectedVideoID: videoId,
+  //   });
+  // };//
+
+  const onSearch = async (videoToSearch) => {
+    const response = await youtubeApi.get("/search", {
+      params: {
+        q: videoToSearch,
+      },
+    });
+    console.log(response);
+
+    let items = response.data.items;
+    let arrayVideo = [{ image: "", title: "", id: "" }];
+    items.map((item) => {
+      let obj = {
+        image: item.snippet.thumbnails.high.url,
+        title: item.snippet.title,
+        id: item.id.videoId,
+      };
+      arrayVideo.push(obj);
+    });
+    console.log(arrayVideo);
+    setVideoSelectd(arrayVideo);
+  };
+
+  // const handleRemoveSong = (id) => {
+  //   setSong(songs.filter((song) => song.response.data.items !== id));
+  // };
+
+  return (
+    <div className="App">
+      <Search onSearch={onSearch} />
+      {/* <SongsContext.Provider value={{ removeSong: handleRemoveSong }}> */}
+      <VideoList
+        videoSelectd={videoSelectd}
+        // onSongSelect={onSongSelect.videoMetaInfo}
+      />
+
+      {/* </SongsContext.Provider> */}
+    </div>
+  );
+}
+
+export default App;
+
+// https://www.googleapis.com/youtube/v3/videos?part=snippet&id=xE_rMj35BIM&key=YOUR_KEY
+//image url-snippet.thumbnails.high.url   , snippet.title ,id
+//songsSelected יכיל בתוכו כל סרטון בתור אובייקט שאותו אובייקט מכיל את השדות הבאים:
+
