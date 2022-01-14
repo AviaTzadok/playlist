@@ -5,7 +5,7 @@ import VideoContext from "../../context/VideoContext";
 import RemoveVideoContext from "../../context/RemoveVideoContext";
 
 const VideoToMyPlaylist = ({ id, title, image }) => {
-  const { removeVideo } = useContext(RemoveVideoContext);
+  const [{ removeVideo }, { playVideo }] = useContext(RemoveVideoContext);
   let obj = {
     id: id,
     title: title,
@@ -18,6 +18,7 @@ const VideoToMyPlaylist = ({ id, title, image }) => {
       {id}
       {title}
       <button onClick={() => removeVideo(id)}>🗑️</button>
+      <button onClick={() => playVideo(id)}>8</button>
     </div>
   );
 };

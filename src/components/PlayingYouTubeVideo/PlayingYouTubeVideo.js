@@ -1,7 +1,7 @@
 const PlayingYouTubeVideo = ({ playVideo }) => {
   console.log(playVideo);
   if (!playVideo) {
-    console.log("ddd");
+    // console.log("ddd");
     return (
       <div>
         <h1>

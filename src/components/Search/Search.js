@@ -1,14 +1,15 @@
 import { useContext, useEffect } from "react";
 
-function Search({ onSearch }) {
+function Search({ onSearch, newSong, setNewSong }) {
   return (
     <div className="form">
       <input
         type="text"
-        // value={newVideo}
+        value={newSong}
         placeholder="Enter Search Keyword"
-        onChange={(e) => onSearch(e.target.value)}
+        onChange={(e) => setNewSong(e.target.value)}
       />
+      <button onClick={() => onSearch(newSong)}>search</button>
     </div>
   );
 }
