@@ -1,4 +1,5 @@
 import React from "react";
+import { BsYoutube, BsPlusSquareFill } from "react-icons/bs";
 import "./Video.css";
 import { useContext, useEffect } from "react";
 import VideoContext from "../../context/VideoContext";
@@ -14,12 +15,16 @@ const Video = ({ id, title, image }) => {
   };
 
   return (
-    <div className="totalImage">
-      <img src={image} alt="Logo" />
-      {id}
-      {title}
-      <button onClick={() => addNewVideo(obj)}>+</button>
-      <button onClick={() => playVideo(id)}>8</button>
+    <div className="totalImageSelector">
+      <button id="playVideo" onClick={() => playVideo(id)}>
+        <div className="imgSong">
+          <img src={image} alt="Logo" className="songsImg" />
+        </div>
+        <div className="titleSongList">{title}</div>
+      </button>
+      <button id="addVideo" onClick={() => addNewVideo(obj)}>
+        <BsPlusSquareFill />
+      </button>
     </div>
   );
 };

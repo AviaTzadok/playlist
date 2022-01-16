@@ -1,0 +1,81 @@
+.totalImagePlaylist {
+  width: 400px;
+  height: 50px;
+  display: flex;
+  background-color: rgba(100, 32, 32, 0);
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.songsImg {
+  border-radius: 100px;
+  height: 30px;
+  width: 30px;
+}
+#playVideo {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+}
+
+.titleSong {
+  padding-left: 5px;
+  padding-bottom: 5px;
+  width: 250px;
+  padding-top: 5px;
+  color: aliceblue;
+}
+
+.imgSong {
+  padding-top: 5px;
+  width: 50px;
+  height: 50px;
+}
+
+#removeVideo {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  cursor: pointer;
+  margin-left: 23px;
+  margin-top: 15px;
+  height: 25px;
+  width: 25px;
+  padding-top: 4.5px;
+  border-radius: 100px;
+
+  color: aquamarine;
+}
+#removeVideo:hover {
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    #e2762d,
+    #884620,
+    #c0a086,
+    #752209
+  );
+}
+
+#playVideo {
+  display: flex;
+  width: 220px;
+  border-radius: 100px;
+}
+#playVideo:hover {
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    #e2762d,
+    #884620,
+    #c0a086,
+    #752209
+  );
+}

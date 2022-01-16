@@ -1,8 +1,10 @@
 import React from "react";
 import { useContext, useEffect } from "react";
-// import "./Video.css";
+import "./VideoToMyPlaylist.css";
 import VideoContext from "../../context/VideoContext";
 import RemoveVideoContext from "../../context/RemoveVideoContext";
+import { BsYoutube, BsTrash } from "react-icons/bs";
+import "./VideoToMyPlaylist.css";
 
 const VideoToMyPlaylist = ({ id, title, image }) => {
   const [{ removeVideo }, { playVideo }] = useContext(RemoveVideoContext);
@@ -13,12 +15,17 @@ const VideoToMyPlaylist = ({ id, title, image }) => {
   };
 
   return (
-    <div className="totalImage">
-      <img src={image} alt="Logo" />
-      {id}
-      {title}
-      <button onClick={() => removeVideo(id)}>🗑️</button>
-      <button onClick={() => playVideo(id)}>8</button>
+    <div className="totalImagePlaylist">
+      {/* {id} */}
+      <button id="playVideo" onClick={() => playVideo(id)}>
+        <div className="imgSong">
+          <img src={image} alt="Logo" className="songsImg" />
+        </div>
+        <div className="titleSong">{title}</div>
+      </button>
+      <button id="removeVideo" onClick={() => removeVideo(id)}>
+        <BsTrash />
+      </button>
     </div>
   );
 };

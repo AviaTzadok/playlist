@@ -1,0 +1,25 @@
+#btnsearch {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  cursor: pointer;
+  margin-left: 23px;
+  height: 25px;
+  width: 25px;
+  border-radius: 50px;
+  color: aquamarine;
+  padding-top: 4px;
+}
+
+#btnsearch:hover {
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    #e2762d,
+    #884620,
+    #c0a086,
+    #752209
+  );
+}

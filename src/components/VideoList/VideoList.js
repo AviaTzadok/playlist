@@ -3,6 +3,7 @@ import Video from "../Video/Video";
 const VideoList = ({ videosSelectd }) => {
   return (
     <div className="song-list">
+      <h3 id="titlePlaylist">Songs to my playlist</h3>
       {videosSelectd.map((v) => (
         <Video key={v.id} id={v.id} title={v.title} image={v.image} />
       ))}

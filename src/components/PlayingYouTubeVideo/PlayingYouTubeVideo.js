@@ -1,18 +1,11 @@
+import YouTube from "@u-wave/react-youtube";
 const PlayingYouTubeVideo = ({ playVideo }) => {
   console.log(playVideo);
   if (!playVideo) {
     // console.log("ddd");
-    return (
-      <div>
-        <h1>
-          Enter search
-          <br /> keyword to load...
-        </h1>
-      </div>
-    );
+    return <div></div>;
   }
 
-  console.log("ggggggggg");
   return (
     <div className="video-responsive">
       <iframe
