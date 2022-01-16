@@ -55,9 +55,9 @@ function App() {
 
   //   arrayItems.map((item) => {
   //     let obj = {
-  // id: item.id.videoId,
-  // title: item.snippet.title,
-  // image: item.snippet.thumbnails.medium.url,
+  //       id: item.id.videoId,
+  //       title: item.snippet.title,
+  //       image: item.snippet.thumbnails.medium.url,
   //     };
   //     arrayVideo.push(obj);
   //   });
@@ -84,6 +84,17 @@ function App() {
     setVideoSelectd(arrayVideo);
   };
 
+  const filterPlaylist = (a, search) => {
+    console.log(search);
+    if (search) {
+      let temp = playlistSongs.filter((v) =>
+        v.title.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+      );
+      console.log(temp);
+      setVideosPlaylist(temp);
+    }
+  };
+
   return (
     <div className="App">
       <RemoveVideoContext.Provider
@@ -97,7 +108,12 @@ function App() {
 
       <PlayingYouTubeVideo playVideo={playVideo} />
 
-      <Search onSearch={onSearch} newSong={newSong} setNewSong={setNewSong} />
+      <Search
+        onSearch={onSearch}
+        newSong={newSong}
+        setNewSong={setNewSong}
+        filterPlaylist={filterPlaylist}
+      />
       <VideoContext.Provider
         value={[
           { addNewVideo: handleAddVideo },

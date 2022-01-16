@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { BsSearch } from "react-icons/bs";
 import "./Search.css";
-function Search({ onSearch, newSong, setNewSong }) {
+function Search({ onSearch, newSong, setNewSong, filterPlaylist }) {
   return (
     <div className="form">
       <input
@@ -10,7 +10,7 @@ function Search({ onSearch, newSong, setNewSong }) {
         type="text"
         value={newSong}
         placeholder="Enter Search Keyword"
-        onChange={(e) => setNewSong(e.target.value)}
+        onChange={(e) => filterPlaylist(setNewSong(e.target.value), newSong)}
       />
       <button id="btnsearch" onClick={() => onSearch(newSong)}>
         <BsSearch />

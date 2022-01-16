@@ -8,7 +8,7 @@
 API_KEY.js
 # testing
 /coverage
-
+secret.js
 # production
 /build
 

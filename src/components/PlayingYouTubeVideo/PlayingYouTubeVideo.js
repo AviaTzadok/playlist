@@ -1,4 +1,5 @@
 import YouTube from "@u-wave/react-youtube";
+import "./PlayingYouTubeVideo.css";
 const PlayingYouTubeVideo = ({ playVideo }) => {
   console.log(playVideo);
   if (!playVideo) {
