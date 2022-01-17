@@ -10,7 +10,9 @@ function Search({ onSearch, newSong, setNewSong, filterPlaylist }) {
         type="text"
         value={newSong}
         placeholder="Enter Search Keyword"
-        onChange={(e) => filterPlaylist(setNewSong(e.target.value), newSong)}
+        onChange={(e) =>
+          filterPlaylist(e.target.value, setNewSong(e.target.value))
+        }
       />
       <button id="btnsearch" onClick={() => onSearch(newSong)}>
         <BsSearch />

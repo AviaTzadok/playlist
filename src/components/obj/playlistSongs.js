@@ -258,11 +258,7 @@ let playlistSongs = [
     image:
       "https://yt3.ggpht.com/ytc/AKedOLRYhSB4xbRDdYDMUp_2CTYdIUZBAkxMe9vBwtBX-g=s240-c-k-c0xffffffff-no-rj-mo",
   },
-  {
-    id: "",
-    title: "",
-    image: "",
-  },
+
   {
     id: "niG3YMU6jFk",
     title: "Adele - Oh My God (Official Video)",
