@@ -1,5 +1,5 @@
 import React from "react";
-import { BsYoutube, BsPlusSquareFill } from "react-icons/bs";
+import { BsPlusSquareFill } from "react-icons/bs";
 import "./Video.css";
 import { useContext, useEffect } from "react";
 import VideoContext from "../../context/VideoContext";
