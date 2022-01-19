@@ -10,6 +10,7 @@ import VideosOnPlaylist from "./components/VideosOnPlaylist/VideosOnPlaylist";
 import PlayingYouTubeVideo from "./components/PlayingYouTubeVideo/PlayingYouTubeVideo";
 // import playlistSongs from "./components/obj/playlistSongs";
 import fullSongsObj from "./components/obj/fullSongsObj";
+import SignUp from "./components/SignUp/SignUp";
 
 const App = () => {
   // const videoListData = [{ videoMetaInfo: [], selectedVideoID: null }];
@@ -49,6 +50,13 @@ const App = () => {
       body: JSON.stringify(newUser),
     });
   }
+  //   function login_user(logInUser) {
+  //     fetch(`http://localhost:3001/users/login`, {
+  //       method: "POST",
+  //       headers: { "content-type": "application/json" },
+  //       body: JSON.stringify(logInUser),
+  //     });
+  //   }
 
   //   useEffect(() => {
   //     login_user({
@@ -149,7 +157,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <SignIn />
+      {/* <SignIn /> */}
+      {/* <SignUp /> */}
       <RemoveVideoContext.Provider
         value={[
           { removeVideo: handleRemoveVideo },

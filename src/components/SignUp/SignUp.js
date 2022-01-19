@@ -1,4 +1,4 @@
-import "./SignIn.css";
+import "./SignUp.css";
 import * as React from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
@@ -13,7 +13,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useParams, useNavigate, Link as LinkUp } from "react-router-dom";
+import { useParams, useNavigate, Link as LinkIn } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -24,7 +24,7 @@ function Copyright(props) {
       {...props}
     >
       <Link color="inherit" href="https://mui.com/" id="c">
-        to={`/SingIn`}
+        Your Website
       </Link>{" "}
       {"."}
     </Typography>
@@ -33,21 +33,19 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignIn() {
+export default function SignUp() {
   const navigate = useNavigate();
 
-  function login_user(logInUser) {
-    fetch(`http://localhost:3001/users/login`, {
+  function register_user(registerUser) {
+    fetch(`http://localhost:3001/users/register`, {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(logInUser),
+      body: JSON.stringify(registerUser),
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.message == "Entry approved") {
+        if (data.message == "Welcome") {
           navigate("/Home");
-        } else {
-          console.log("not good");
         }
       });
   }
@@ -58,7 +56,7 @@ export default function SignIn() {
 
     let name = String(data.get("username"));
     let password = String(data.get("password"));
-    login_user({
+    register_user({
       username: name,
       password: password,
     });
@@ -69,13 +67,13 @@ export default function SignIn() {
   };
 
   return (
-    <div className="logIn">
+    <div className="signUp">
       <ThemeProvider theme={theme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
           <Box
             sx={{
-              marginTop: 5,
+              marginTop: 8,
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
@@ -84,67 +82,61 @@ export default function SignIn() {
             <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
               <LockOutlinedIcon />
             </Avatar>
-            <Typography component="h1" variant="h6">
-              Sign in
+            <Typography component="h1" variant="h5">
+              Sign up
             </Typography>
             <Box
               component="form"
-              onSubmit={handleSubmit}
               noValidate
-              sx={{ mt: 1 }}
+              onSubmit={handleSubmit}
+              sx={{ mt: 3 }}
             >
-              <TextField
-                className="TextField name"
-                margin="normal"
-                required
-                fullWidth
-                id="username"
-                label="Username"
-                name="username"
-                autoComplete="username"
-                autoFocus
-              />
-              <TextField
-                className="TextField password"
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-              <FormControlLabel
-                id="remember"
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              />
+              <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  <TextField
+                    className="TextField name"
+                    autoComplete="given-username"
+                    name="username"
+                    required
+                    fullWidth
+                    id="username"
+                    label="username"
+                    autoFocus
+                  />
+                </Grid>
 
+                <Grid item xs={12}>
+                  <TextField
+                    className="TextField password"
+                    required
+                    fullWidth
+                    name="password"
+                    label="Password"
+                    type="password"
+                    id="password"
+                    autoComplete="new-password"
+                  />
+                </Grid>
+              </Grid>
               <Button
-                id="login_btn"
+                id="SignUp_btn"
                 type="submit"
                 fullWidth
-                // variant="contained"
+                variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign In
+                Sign Up
               </Button>
-              <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2" id="LinkForgotPassword">
-                    Forgot password?
-                  </Link>
-                </Grid>
+              <Grid container justifyContent="flex-end">
                 <Grid item>
-                  <LinkUp to={`/SignUp`} id="LinkUp">
-                    {"Don't have an account? Sign Up"}
-                  </LinkUp>
+                  <LinkIn to={`/`} id="LinkIn">
+                    Already have an account? Sign in
+                  </LinkIn>
                 </Grid>
               </Grid>
             </Box>
           </Box>
-          <Copyright sx={{ mt: 8, mb: 4 }} />
+          <Copyright sx={{ mt: 5 }} />
         </Container>
       </ThemeProvider>
     </div>

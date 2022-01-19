@@ -1,18 +1,18 @@
-.logIn {
+.signUp {
   position: absolute;
   right: 38%;
   top: 10%;
   width: 400px;
   height: 600px;
-  background-color: rgba(247, 236, 237, 0.5);
+  background-color: rgba(237, 247, 236, 0.5);
   border-radius: 25px;
 }
-#login_btn {
+#SignUp_btn {
   color: black;
   background-color: rgba(255, 0, 0, 0.171);
   border-radius: 5px;
 }
-#login_btn:hover {
+#SignUp_btn:hover {
   box-shadow: 0px 0px 11px 2px rgba(255, 0, 0, 0.171);
 }
 
@@ -20,26 +20,12 @@
   background-color: rgba(255, 0, 0, 0.089);
   border-radius: 5px;
 }
-/* #remember {
-  color: azure;
-} */
-#LinkUp {
+
+#LinkIn {
   color: rgb(38, 0, 255);
-  font-size: 17px;
-  margin-left: 42px;
-}
-#LinkUp:hover {
-  color: rgb(155, 4, 160);
-}
-#LinkForgotPassword {
-  color: rgb(27, 0, 180);
   font-size: 16px;
   margin-right: 49px;
 }
-#LinkForgotPassword:hover {
+#LinkIn:hover {
   color: rgb(155, 4, 160);
-}
-
-#c {
-  color: rgba(255, 0, 0, 0);
 }
