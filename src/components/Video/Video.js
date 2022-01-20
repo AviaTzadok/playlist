@@ -7,13 +7,11 @@ import VideoContext from "../../context/VideoContext";
 
 const Video = ({ id, title, image }) => {
   const [{ addNewVideo }, { playVideo }] = useContext(VideoContext);
-
   let obj = {
     id: id,
     title: title,
     image: image,
   };
-
   return (
     <div className="totalImageSelector">
       <button id="playVideo" onClick={() => playVideo(id)}>
@@ -22,9 +20,11 @@ const Video = ({ id, title, image }) => {
         </div>
         <div className="titleSongList">{title}</div>
       </button>
-      <button id="addVideo" onClick={() => addNewVideo(obj)}>
-        <BsPlusSquareFill />
-      </button>
+      {localStorage.getItem("accessToken") !== "-1" && (
+        <button id="addVideo" onClick={() => addNewVideo(obj)}>
+          <BsPlusSquareFill />
+        </button>
+      )}
     </div>
   );
 };

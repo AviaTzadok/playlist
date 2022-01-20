@@ -44,13 +44,18 @@ export default function SignIn() {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.message == "Entry approved") {
+        console.log(data);
+        localStorage.accessToken = data.accessToken;
+        console.log(localStorage.accessToken);
+        if (data.status == 200) {
           navigate("/Home");
-        } else {
-          console.log("not good");
         }
       });
   }
+  function without_account() {
+    localStorage.accessToken = "-1";
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -61,10 +66,6 @@ export default function SignIn() {
     login_user({
       username: name,
       password: password,
-    });
-    console.log({
-      username: data.get("username"),
-      password: data.get("password"),
     });
   };
 
@@ -139,6 +140,15 @@ export default function SignIn() {
                 <Grid item>
                   <LinkUp to={`/SignUp`} id="LinkUp">
                     {"Don't have an account? Sign Up"}
+                  </LinkUp>
+                </Grid>
+                <Grid item>
+                  <LinkUp
+                    to={`/Home`}
+                    id="without_account"
+                    onClick={() => without_account()}
+                  >
+                    {"Login without opening an account"}
                   </LinkUp>
                 </Grid>
               </Grid>

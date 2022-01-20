@@ -11,30 +11,50 @@ import PlayingYouTubeVideo from "./components/PlayingYouTubeVideo/PlayingYouTube
 // import playlistSongs from "./components/obj/playlistSongs";
 import fullSongsObj from "./components/obj/fullSongsObj";
 import SignUp from "./components/SignUp/SignUp";
-
+import { useParams, useNavigate, Link } from "react-router-dom";
+import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
+import QueueMusicIcon from "@mui/icons-material/QueueMusic";
 const App = () => {
   // const videoListData = [{ videoMetaInfo: [], selectedVideoID: null }];
 
   const [videosSelectd, setVideoSelectd] = useState([]);
 
   const [PlaylistFromDB, setPlaylistFromDB] = useState([]);
-  const [videosPlaylist, setVideosPlaylist] = useState([]);
+  const [videosPlaylist, setVideosPlaylist] = useState(PlaylistFromDB);
 
   const [playVideo, setPlayVideo] = useState("");
 
   const [newSong, setNewSong] = useState("");
 
-  function send_song_to_mongo(song) {
-    fetch(`http://localhost:3001/songs`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(song),
-    });
+  function getMyPlaylist() {
+    localStorage.accessToAllVideos = true;
+    try {
+      fetch(`http://localhost:3001/songs`, {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+          authorization: `bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setPlaylistFromDB(data);
+          setVideosPlaylist(data);
+        });
+    } catch (e) {
+      console.log(e);
+      console.log("no songs on database");
+    }
   }
 
-  function getAllPlaylist() {
-    fetch(`http://localhost:3001/songs`, {
+  function get_all_videos() {
+    localStorage.accessToAllVideos = false;
+    fetch(`http://localhost:3001/songs/${"a"}`, {
       method: "GET",
+      headers: {
+        "content-type": "application/json",
+        authorization: `bearer ${localStorage.getItem("accessToken")}`,
+      },
     })
       .then((res) => res.json())
       .then((data) => {
@@ -43,65 +63,6 @@ const App = () => {
       });
   }
 
-  function send_new_user(newUser) {
-    fetch(`http://localhost:3001/users/register`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(newUser),
-    });
-  }
-  //   function login_user(logInUser) {
-  //     fetch(`http://localhost:3001/users/login`, {
-  //       method: "POST",
-  //       headers: { "content-type": "application/json" },
-  //       body: JSON.stringify(logInUser),
-  //     });
-  //   }
-
-  //   useEffect(() => {
-  //     login_user({
-  //       username: "Avia Tzadok",
-  //       password: "1234",
-  //     });
-  //   }, []);
-
-  useEffect(() => {
-    getAllPlaylist();
-  }, []);
-
-  const handleAddVideo = (obj) => {
-    let flag = true;
-    videosPlaylist.map((v) => {
-      if (v.id == obj.id) {
-        flag = false;
-      }
-    });
-    if (flag) {
-      setVideosPlaylist([...videosPlaylist, obj]);
-      send_song_to_mongo(obj);
-    }
-    return;
-  };
-
-  const handleRemoveVideo = (id) => {
-    setVideosPlaylist(videosPlaylist.filter((song) => song.id != id));
-    Delete_a_task_from_mongo(id);
-  };
-
-  function Delete_a_task_from_mongo(id) {
-    fetch(`http://localhost:3001/songs`, {
-      method: "DELETE",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify([id]),
-    });
-  }
-
-  const handlePlayVideo = (id) => {
-    console.log(id);
-    setPlayVideo(id);
-  };
-
-  //*****************for search youtube***********************
   const onSearch = async (videoToSearch) => {
     fetch(`http://localhost:3001/search/${videoToSearch}`, {
       method: "GET",
@@ -125,6 +86,78 @@ const App = () => {
       });
   };
 
+  /////////////////////////////////////////////////////
+
+  function send_song_to_mongo(song) {
+    fetch(`http://localhost:3001/songs`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        authorization: `bearer ${localStorage.getItem("accessToken")}`,
+      },
+      body: JSON.stringify(song),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setPlaylistFromDB([...videosPlaylist, data]);
+        setVideosPlaylist([...videosPlaylist, data]);
+      });
+  }
+
+  const handleAddVideo = (obj) => {
+    if (localStorage.getItem("accessToken") == "-1") {
+      return;
+    }
+    let flag = true;
+    videosPlaylist.map((v) => {
+      if (v.id == obj.id) {
+        flag = false;
+      }
+    });
+    if (flag) {
+      send_song_to_mongo(obj);
+    }
+    return;
+  };
+
+  function handleRemoveVideo(id) {
+    console.log(localStorage.getItem("accessToken"));
+    fetch(`http://localhost:3001/songs/`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+        authorization: `bearer ${localStorage.getItem("accessToken")}`,
+      },
+      body: JSON.stringify([id]),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setPlaylistFromDB(data);
+        setVideosPlaylist(data);
+      });
+  }
+
+  const handlePlayVideo = (id) => {
+    console.log(id);
+    setPlayVideo(id);
+  };
+
+  const filterPlaylist = (search, a) => {
+    if (search.length > 0) {
+      setVideosPlaylist(
+        PlaylistFromDB.filter((v) =>
+          v.title.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+        )
+      );
+    } else {
+      setVideosPlaylist(PlaylistFromDB);
+    }
+  };
+
+  useEffect(() => {
+    getMyPlaylist();
+  }, []);
+
   //*********for practice*********************
   // const onSearch = (search) => {
   //   let arrayItems = fullSongsObj.data.items;
@@ -142,23 +175,14 @@ const App = () => {
   //   console.log(arrayVideo);
   //   setVideoSelectd(arrayVideo);
   // };
-
-  const filterPlaylist = (search, a) => {
-    if (search.length > 0) {
-      setVideosPlaylist(
-        PlaylistFromDB.filter((v) =>
-          v.title.toLocaleLowerCase().includes(search.toLocaleLowerCase())
-        )
-      );
-    } else {
-      setVideosPlaylist(PlaylistFromDB);
-    }
-  };
-
   return (
     <div className="App">
-      {/* <SignIn /> */}
-      {/* <SignUp /> */}
+      <div className="get_all_videos" onClick={() => get_all_videos()}>
+        <SubscriptionsIcon />
+      </div>
+      <div className="get_my_playlist" onClick={() => getMyPlaylist()}>
+        <QueueMusicIcon />
+      </div>
       <RemoveVideoContext.Provider
         value={[
           { removeVideo: handleRemoveVideo },

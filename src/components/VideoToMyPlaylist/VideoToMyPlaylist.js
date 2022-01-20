@@ -23,9 +23,12 @@ const VideoToMyPlaylist = ({ id, title, image }) => {
         </div>
         <div className="titleSong">{title}</div>
       </button>
-      <button id="removeVideo" onClick={() => removeVideo(id)}>
-        <BsTrash />
-      </button>
+
+      {localStorage.getItem("accessToAllVideos") == "true" && (
+        <button id="removeVideo" onClick={() => removeVideo(id)}>
+          <BsTrash />
+        </button>
+      )}
     </div>
   );
 };

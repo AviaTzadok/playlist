@@ -44,7 +44,11 @@ export default function SignUp() {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.message == "Welcome") {
+        console.log(data);
+        console.log(data);
+        localStorage.accessToken = data.accessToken; //
+        console.log(localStorage.accessToken);
+        if (data.status == 200) {
           navigate("/Home");
         }
       });
@@ -59,10 +63,6 @@ export default function SignUp() {
     register_user({
       username: name,
       password: password,
-    });
-    console.log({
-      username: data.get("username"),
-      password: data.get("password"),
     });
   };
 

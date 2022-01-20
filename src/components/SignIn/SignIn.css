@@ -43,3 +43,7 @@
 #c {
   color: rgba(255, 0, 0, 0);
 }
+
+#without_account {
+  margin-left: 42px;
+}
