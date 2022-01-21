@@ -1,5 +1,6 @@
 import "./App.css";
 import VideoContext from "./context/VideoContext";
+import PlaylistListContext from "./context/PlaylistList";
 import RemoveVideoContext from "./context/RemoveVideoContext";
 import { useState, useEffect } from "react";
 import Search from "./components/Search/Search";
@@ -14,13 +15,14 @@ import SignUp from "./components/SignUp/SignUp";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
 import QueueMusicIcon from "@mui/icons-material/QueueMusic";
+import LogoutIcon from "@mui/icons-material/Logout";
 const App = () => {
   // const videoListData = [{ videoMetaInfo: [], selectedVideoID: null }];
 
   const [videosSelectd, setVideoSelectd] = useState([]);
 
   const [PlaylistFromDB, setPlaylistFromDB] = useState([]);
-  const [videosPlaylist, setVideosPlaylist] = useState(PlaylistFromDB);
+  const [videosPlaylist, setVideosPlaylist] = useState([]);
 
   const [playVideo, setPlayVideo] = useState("");
 
@@ -29,7 +31,7 @@ const App = () => {
   function getMyPlaylist() {
     localStorage.accessToAllVideos = true;
     try {
-      fetch(`http://localhost:3001/songs`, {
+      fetch(`http://localhost:3001/songs/${"myPlaylist"}`, {
         method: "GET",
         headers: {
           "content-type": "application/json",
@@ -49,7 +51,7 @@ const App = () => {
 
   function get_all_videos() {
     localStorage.accessToAllVideos = false;
-    fetch(`http://localhost:3001/songs/${"a"}`, {
+    fetch(`http://localhost:3001/songs`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -71,6 +73,7 @@ const App = () => {
       .then((_data) => {
         console.log(_data);
         let arrayItems = _data.items;
+        arrayItems = arrayItems.filter((v) => v.id.kind == "youtube#video");
         let arrayVideo = [];
 
         arrayItems.map((item) => {
@@ -86,8 +89,6 @@ const App = () => {
       });
   };
 
-  /////////////////////////////////////////////////////
-
   function send_song_to_mongo(song) {
     fetch(`http://localhost:3001/songs`, {
       method: "POST",
@@ -99,8 +100,11 @@ const App = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setPlaylistFromDB([...videosPlaylist, data]);
-        setVideosPlaylist([...videosPlaylist, data]);
+        if (data) {
+          console.log(data);
+          setPlaylistFromDB([...videosPlaylist, data]);
+          setVideosPlaylist([...videosPlaylist, data]);
+        }
       });
   }
 
@@ -175,14 +179,32 @@ const App = () => {
   //   console.log(arrayVideo);
   //   setVideoSelectd(arrayVideo);
   // };
+
+  function addPlaylistToPlaylistList() {}
+  function handleRemovePlaylist() {}
   return (
     <div className="App">
+      <Link to={`/`} id="LinkUp">
+        <button className="logOut">
+          <LogoutIcon />
+        </button>
+      </Link>
       <div className="get_all_videos" onClick={() => get_all_videos()}>
         <SubscriptionsIcon />
       </div>
       <div className="get_my_playlist" onClick={() => getMyPlaylist()}>
         <QueueMusicIcon />
       </div>
+
+      <PlaylistListContext.Provider
+        value={[
+          { removePlaylist: handleRemovePlaylist },
+          { playVideo: handlePlayVideo },
+        ]}
+      >
+        <playlistList addPlaylistToPlaylistList={addPlaylistToPlaylistList} />
+      </PlaylistListContext.Provider>
+
       <RemoveVideoContext.Provider
         value={[
           { removeVideo: handleRemoveVideo },

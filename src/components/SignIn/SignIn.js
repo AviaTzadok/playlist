@@ -14,7 +14,6 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useParams, useNavigate, Link as LinkUp } from "react-router-dom";
-
 function Copyright(props) {
   return (
     <Typography
@@ -70,93 +69,100 @@ export default function SignIn() {
   };
 
   return (
-    <div className="logIn">
-      <ThemeProvider theme={theme}>
-        <Container component="main" maxWidth="xs">
-          <CssBaseline />
-          <Box
-            sx={{
-              marginTop: 5,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-              <LockOutlinedIcon />
-            </Avatar>
-            <Typography component="h1" variant="h6">
-              Sign in
-            </Typography>
+    <div>
+      <div className="Welcome">
+        Welcome to the great playlist site.
+        <br /> Where you can create your own playlists <br />
+        and watch what playlists are doing across the web
+      </div>
+      <div className="logIn">
+        <ThemeProvider theme={theme}>
+          <Container component="main" maxWidth="xs">
+            <CssBaseline />
             <Box
-              component="form"
-              onSubmit={handleSubmit}
-              noValidate
-              sx={{ mt: 1 }}
+              sx={{
+                marginTop: 5,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
             >
-              <TextField
-                className="TextField name"
-                margin="normal"
-                required
-                fullWidth
-                id="username"
-                label="Username"
-                name="username"
-                autoComplete="username"
-                autoFocus
-              />
-              <TextField
-                className="TextField password"
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-              <FormControlLabel
-                id="remember"
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              />
-
-              <Button
-                id="login_btn"
-                type="submit"
-                fullWidth
-                // variant="contained"
-                sx={{ mt: 3, mb: 2 }}
+              <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+                <LockOutlinedIcon />
+              </Avatar>
+              <Typography component="h1" variant="h6">
+                Sign in
+              </Typography>
+              <Box
+                component="form"
+                onSubmit={handleSubmit}
+                noValidate
+                sx={{ mt: 1 }}
               >
-                Sign In
-              </Button>
-              <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2" id="LinkForgotPassword">
-                    Forgot password?
-                  </Link>
+                <TextField
+                  className="TextField name"
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="username"
+                  label="Username"
+                  name="username"
+                  autoComplete="username"
+                  autoFocus
+                />
+                <TextField
+                  className="TextField password"
+                  margin="normal"
+                  required
+                  fullWidth
+                  name="password"
+                  label="Password"
+                  type="password"
+                  id="password"
+                  autoComplete="current-password"
+                />
+                <FormControlLabel
+                  id="remember"
+                  control={<Checkbox value="remember" color="primary" />}
+                  label="Remember me"
+                />
+
+                <Button
+                  id="login_btn"
+                  type="submit"
+                  fullWidth
+                  // variant="contained"
+                  sx={{ mt: 3, mb: 2 }}
+                >
+                  Sign In
+                </Button>
+                <Grid container>
+                  <Grid item xs>
+                    <Link href="#" variant="body2" id="LinkForgotPassword">
+                      Forgot password?
+                    </Link>
+                  </Grid>
+                  <Grid item>
+                    <LinkUp to={`/SignUp`} id="LinkUp">
+                      {"Don't have an account? Sign Up"}
+                    </LinkUp>
+                  </Grid>
+                  <Grid item>
+                    <LinkUp
+                      to={`/Home`}
+                      id="without_account"
+                      onClick={() => without_account()}
+                    >
+                      {"Login without opening an account"}
+                    </LinkUp>
+                  </Grid>
                 </Grid>
-                <Grid item>
-                  <LinkUp to={`/SignUp`} id="LinkUp">
-                    {"Don't have an account? Sign Up"}
-                  </LinkUp>
-                </Grid>
-                <Grid item>
-                  <LinkUp
-                    to={`/Home`}
-                    id="without_account"
-                    onClick={() => without_account()}
-                  >
-                    {"Login without opening an account"}
-                  </LinkUp>
-                </Grid>
-              </Grid>
+              </Box>
             </Box>
-          </Box>
-          <Copyright sx={{ mt: 8, mb: 4 }} />
-        </Container>
-      </ThemeProvider>
+            <Copyright sx={{ mt: 8, mb: 4 }} />
+          </Container>
+        </ThemeProvider>
+      </div>
     </div>
   );
 }

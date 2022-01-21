@@ -50,3 +50,13 @@
 .get_my_playlist:hover {
   cursor: pointer;
 }
+
+.logOut {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 40px;
+  color: aliceblue;
+  background: none;
+  border: none;
+}

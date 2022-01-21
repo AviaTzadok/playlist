@@ -1,0 +1,516 @@
+{
+    "kind": "youtube#searchListResponse",
+    "etag": "VzfHG-YaMfLrnryNEWujYrYGpv0",
+    "nextPageToken": "CA8QAA",
+    "regionCode": "IL",
+    "pageInfo": {
+        "totalResults": 1000000,
+        "resultsPerPage": 15
+    },
+    "items": [
+        {
+            "kind": "youtube#searchResult",
+            "etag": "QSJmYOf83m0RC2tOhbkVqz76Fls",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "kTJczUoc26U"
+            },
+            "snippet": {
+                "publishedAt": "2021-07-09T04:00:12Z",
+                "channelId": "UCqPbkJrjrsQb_RGlC_4HEgg",
+                "title": "The Kid LAROI, Justin Bieber - STAY (Official Video)",
+                "description": "Official video for “Stay” by The Kid LAROI & Justin Bieber. Listen & Download “Stay” out now: https://thekidlaroi.lnk.to/Stay Amazon ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/kTJczUoc26U/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/kTJczUoc26U/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/kTJczUoc26U/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "TheKidLAROIVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2021-07-09T04:00:12Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "QD_ZcXFKSy5rduwjArnJWRdJDpc",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "Fp8msa5uYsc"
+            },
+            "snippet": {
+                "publishedAt": "2021-10-08T04:00:10Z",
+                "channelId": "UCHkj014U2CQ2Nv0UZeYpE_A",
+                "title": "Justin Bieber - Ghost",
+                "description": "Justice: The Complete Edition - https://JustinBieber.lnk.to/JusticeTheCompleteEdition Shop “Justice” merch ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Fp8msa5uYsc/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Fp8msa5uYsc/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Fp8msa5uYsc/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "JustinBieberVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2021-10-08T04:00:10Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "VVLk4PBJe7ezCkGg6Kp0BlbaoYk",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "Su6kidaGW_8"
+            },
+            "snippet": {
+                "publishedAt": "2021-03-17T16:00:15Z",
+                "channelId": "UC4eYXhJI4-7wSWc8UNRwD4A",
+                "title": "Justin Bieber: Tiny Desk (Home) Concert",
+                "description": "More from NPR Music: Tiny Desk Concerts: https://www.npr.org/tinydesk​ Twitter: https://twitter.com/nprmusic​ Instagram: ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Su6kidaGW_8/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Su6kidaGW_8/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Su6kidaGW_8/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "NPR Music",
+                "liveBroadcastContent": "none",
+                "publishTime": "2021-03-17T16:00:15Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "knAi6pCw6a76z4SlaQpjOOFmZ-g",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "tQ0yjYUFKAE"
+            },
+            "snippet": {
+                "publishedAt": "2021-03-19T04:00:15Z",
+                "channelId": "UCHkj014U2CQ2Nv0UZeYpE_A",
+                "title": "Justin Bieber - Peaches ft. Daniel Caesar, Giveon",
+                "description": "Justice the album out now: https://justinbieber.lnk.to/Justice​​ Shop Justice merch: https://JustinBieber.lnk.to/OfficialShop​ ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/tQ0yjYUFKAE/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/tQ0yjYUFKAE/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/tQ0yjYUFKAE/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "JustinBieberVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2021-03-19T04:00:15Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "f6tGu4CngFcImLrwHTSAmxD4Msg",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "kffacxfA7G4"
+            },
+            "snippet": {
+                "publishedAt": "2010-02-19T08:16:34Z",
+                "channelId": "UCHkj014U2CQ2Nv0UZeYpE_A",
+                "title": "Justin Bieber - Baby (Official Music Video) ft. Ludacris",
+                "description": "REMASTERED IN HD! UP TO 4K!! Official Music Video for Baby performed by Justin Bieber feat. Ludacris. VEVOCertified on April ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/kffacxfA7G4/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/kffacxfA7G4/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/kffacxfA7G4/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "JustinBieberVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2010-02-19T08:16:34Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "zaQgX6uRo6bKzKpyb94By7PbT8c",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "_Z5-P9v3F8w"
+            },
+            "snippet": {
+                "publishedAt": "2010-05-27T22:11:04Z",
+                "channelId": "UCHkj014U2CQ2Nv0UZeYpE_A",
+                "title": "Justin Bieber - Never Say Never (Official Music Video) ft. Jaden Smith",
+                "description": "REMASTERED IN HD! Music video by Justin Bieber performing Never Say Never. (C) 2010 The Island Def Jam Music Group ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/_Z5-P9v3F8w/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/_Z5-P9v3F8w/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/_Z5-P9v3F8w/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "JustinBieberVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2010-05-27T22:11:04Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "JetGJO6pJJOdLeWpUe5KZg4GdxU",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "DK_0jXPuIr0"
+            },
+            "snippet": {
+                "publishedAt": "2015-08-31T03:00:00Z",
+                "channelId": "UCHkj014U2CQ2Nv0UZeYpE_A",
+                "title": "Justin Bieber - What Do You Mean? (Official Music Video)",
+                "description": "'Purpose' Available Everywhere Now! iTunes: http://smarturl.it/PurposeDlx?IQid=VEVO1113 Stream & Add To Your Spotify ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/DK_0jXPuIr0/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/DK_0jXPuIr0/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/DK_0jXPuIr0/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "JustinBieberVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2015-08-31T03:00:00Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "CYNcHCIj_97UlU2FT9PA2mbWcDo",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "8EJ3zbKTWQ8"
+            },
+            "snippet": {
+                "publishedAt": "2020-01-04T17:00:11Z",
+                "channelId": "UCHkj014U2CQ2Nv0UZeYpE_A",
+                "title": "Justin Bieber - Yummy (Official Video)",
+                "description": "Changes Out Now: https://justinbieber.lnk.to/Changes Follow Justin: http://facebook.com/justinbieber http://twitter.com/justinbieber ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/8EJ3zbKTWQ8/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/8EJ3zbKTWQ8/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/8EJ3zbKTWQ8/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "JustinBieberVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2020-01-04T17:00:11Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "4wkyTvB6zQ-7k8jGOfIwWtO2T3A",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "Ys7-6_t7OEQ"
+            },
+            "snippet": {
+                "publishedAt": "2012-10-12T15:55:06Z",
+                "channelId": "UCHkj014U2CQ2Nv0UZeYpE_A",
+                "title": "Justin Bieber - Beauty And A Beat ft. Nicki Minaj (Official Music Video)",
+                "description": "Music video by Justin Bieber performing Beauty And A Beat. ©: The Island Def Jam Music Group #JustinBieber #BeautyAndABeat ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Ys7-6_t7OEQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Ys7-6_t7OEQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Ys7-6_t7OEQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "JustinBieberVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2012-10-12T15:55:06Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "XsdNWc3j0ytTl1GbDTfgvKJkATQ",
+            "id": {
+                "kind": "youtube#channel",
+                "channelId": "UCHkj014U2CQ2Nv0UZeYpE_A"
+            },
+            "snippet": {
+                "publishedAt": "2009-09-26T03:46:15Z",
+                "channelId": "UCHkj014U2CQ2Nv0UZeYpE_A",
+                "title": "JustinBieberVEVO",
+                "description": "FreePacoSanz.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://yt3.ggpht.com/ytc/AKedOLTEr1BLncYwW2euEJpNnxaOwtVhKNIwnpYgFzUEbQ=s88-c-k-c0xffffffff-no-rj-mo"
+                    },
+                    "medium": {
+                        "url": "https://yt3.ggpht.com/ytc/AKedOLTEr1BLncYwW2euEJpNnxaOwtVhKNIwnpYgFzUEbQ=s240-c-k-c0xffffffff-no-rj-mo"
+                    },
+                    "high": {
+                        "url": "https://yt3.ggpht.com/ytc/AKedOLTEr1BLncYwW2euEJpNnxaOwtVhKNIwnpYgFzUEbQ=s800-c-k-c0xffffffff-no-rj-mo"
+                    }
+                },
+                "channelTitle": "JustinBieberVEVO",
+                "liveBroadcastContent": "upcoming",
+                "publishTime": "2009-09-26T03:46:15Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "2bqcTtuqazom_SvAiF9_Diuah30",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "fRh_vgS2dFE"
+            },
+            "snippet": {
+                "publishedAt": "2015-10-22T20:00:02Z",
+                "channelId": "UCHkj014U2CQ2Nv0UZeYpE_A",
+                "title": "Justin Bieber - Sorry (PURPOSE : The Movement)",
+                "description": "'Purpose' Available Everywhere Now! iTunes: http://smarturl.it/PurposeDlx?IQid=VEVO1113 Stream & Add To Your Spotify ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/fRh_vgS2dFE/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/fRh_vgS2dFE/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/fRh_vgS2dFE/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "JustinBieberVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2015-10-22T20:00:02Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "VG9OtVTREGUNbc4YV1mUH-2wiEk",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "3AyMjyHu1bA"
+            },
+            "snippet": {
+                "publishedAt": "2020-02-12T20:00:01Z",
+                "channelId": "UCHkj014U2CQ2Nv0UZeYpE_A",
+                "title": "Justin Bieber - Intentions (Official Video (Short Version)) ft. Quavo",
+                "description": "Changes: https://justinbieber.lnk.to/Changes Watch Official Video: https://justinbieber.lnk.to/IntentionsVideo Join Justin Bieber in ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/3AyMjyHu1bA/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/3AyMjyHu1bA/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/3AyMjyHu1bA/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "JustinBieberVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2020-02-12T20:00:01Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "UnK6EfmRp-xsAAau48WgRCg8zdw",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "4GuqB1BQVr4"
+            },
+            "snippet": {
+                "publishedAt": "2012-05-03T23:50:06Z",
+                "channelId": "UCHkj014U2CQ2Nv0UZeYpE_A",
+                "title": "Justin Bieber - Boyfriend (Official Music Video)",
+                "description": "Music video by Justin Bieber performing Boyfriend. ©: 2012 The Island Def Jam Music Group #VEVOCertified on July 11, 2012.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/4GuqB1BQVr4/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/4GuqB1BQVr4/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/4GuqB1BQVr4/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "JustinBieberVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2012-05-03T23:50:06Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "7_LNVaVcEMh_PcIfGTGDMfN9Za0",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "47YClVMlthI"
+            },
+            "snippet": {
+                "publishedAt": "2014-01-30T00:00:01Z",
+                "channelId": "UCHkj014U2CQ2Nv0UZeYpE_A",
+                "title": "Justin Bieber - Confident ft. Chance The Rapper (Official Music Video)",
+                "description": "Music video by Justin Bieber performing Confident ft. Chance The Rapper. (C) 2014 The Island Def Jam Music Group.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/47YClVMlthI/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/47YClVMlthI/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/47YClVMlthI/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "JustinBieberVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2014-01-30T00:00:01Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "cdScr01i9MX-P5GjusP8WLG50DE",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "oyEuk8j8imI"
+            },
+            "snippet": {
+                "publishedAt": "2015-11-14T15:00:01Z",
+                "channelId": "UCHkj014U2CQ2Nv0UZeYpE_A",
+                "title": "Justin Bieber - Love Yourself (Official Music Video)",
+                "description": "'Purpose' Available Everywhere Now! iTunes: http://smarturl.it/PurposeDlx?IQid=VEVO1113 Stream & Add To Your Spotify ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/oyEuk8j8imI/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/oyEuk8j8imI/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/oyEuk8j8imI/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "JustinBieberVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2015-11-14T15:00:01Z"
+            }
+        }
+    ]
+}

@@ -1,3 +1,5 @@
+@import "https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap";
+
 .logIn {
   position: absolute;
   right: 38%;
@@ -46,4 +48,13 @@
 
 #without_account {
   margin-left: 42px;
+}
+
+.Welcome {
+  position: absolute;
+  left: 2%;
+  top: 15%;
+  color: tomato;
+  font-family: "Mea Culpa", cursive;
+  font-size: 35px;
 }

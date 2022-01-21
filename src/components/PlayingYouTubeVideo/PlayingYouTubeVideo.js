@@ -14,8 +14,8 @@ const PlayingYouTubeVideo = ({ playVideo }) => {
   return (
     <div className="video-responsive">
       <iframe
-        width="600"
-        height="400"
+        width="400"
+        height="300"
         src={`https://www.youtube.com/embed/${playVideo}?autoplay=1`}
         frameBorder="0"
         allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
