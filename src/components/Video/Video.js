@@ -6,8 +6,6 @@ import VideoContext from "../../context/VideoContext";
 // import PlayingYouTubeVideoContext from "../../context/PlayingYouTubeVideoContext";
 
 const Video = ({ id, title, image }) => {
-  // TODO: "add to playlist";
-
   const [{ addNewVideo }, { playVideo }] = useContext(VideoContext);
   let obj = {
     id: id,

@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 import Search from "./components/Search/Search";
 import VideoList from "./components/VideoList/VideoList";
 import SignIn from "./components/SignIn/SignIn";
-import Playlist from "./components/Playlist/Playlist";
 import VideosOnPlaylist from "./components/VideosOnPlaylist/VideosOnPlaylist";
 import PlayingYouTubeVideo from "./components/PlayingYouTubeVideo/PlayingYouTubeVideo";
 // import playlistSongs from "./components/obj/playlistSongs";
@@ -181,21 +180,6 @@ const App = () => {
   //   setVideoSelectd(arrayVideo);
   // };
 
-  // function addSongToPlaylist(song) {
-  //   fetch(`http://localhost:3001/playlist`, {
-  //     method: "POST",
-  //     headers: {
-  //       "content-type": "application/json",
-  //       authorization: `bearer ${localStorage.getItem("accessToken")}`,
-  //     },
-  //     body: JSON.stringify(song),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //     });
-  // }
-
   function handleRemovePlaylist() {}
   return (
     <div className="App">
@@ -210,15 +194,6 @@ const App = () => {
       <div className="get_my_playlist" onClick={() => getMyPlaylist()}>
         <QueueMusicIcon />
       </div>
-
-      {/* <PlaylistListContext.Provider
-        value={[
-          { removePlaylist: handleRemovePlaylist },
-          { playVideo: handlePlayVideo },
-        ]}
-      >
-        <PlaylistList addSongToPlaylist={addSongToPlaylist} />
-      </PlaylistListContext.Provider> */}
 
       <RemoveVideoContext.Provider
         value={[
