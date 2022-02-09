@@ -1,6 +1,6 @@
 import "./App.css";
 import VideoContext from "./context/VideoContext";
-import PlaylistListContext from "./context/PlaylistList";
+import PlaylistListContext from "./context/PlaylistListContext";
 import RemoveVideoContext from "./context/RemoveVideoContext";
 import { useState, useEffect } from "react";
 import Search from "./components/Search/Search";
@@ -16,6 +16,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
 import QueueMusicIcon from "@mui/icons-material/QueueMusic";
 import LogoutIcon from "@mui/icons-material/Logout";
+import PlaylistList from "./context/PlaylistListContext";
 const App = () => {
   // const videoListData = [{ videoMetaInfo: [], selectedVideoID: null }];
 
@@ -180,7 +181,21 @@ const App = () => {
   //   setVideoSelectd(arrayVideo);
   // };
 
-  function addPlaylistToPlaylistList() {}
+  // function addSongToPlaylist(song) {
+  //   fetch(`http://localhost:3001/playlist`, {
+  //     method: "POST",
+  //     headers: {
+  //       "content-type": "application/json",
+  //       authorization: `bearer ${localStorage.getItem("accessToken")}`,
+  //     },
+  //     body: JSON.stringify(song),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //     });
+  // }
+
   function handleRemovePlaylist() {}
   return (
     <div className="App">
@@ -196,14 +211,14 @@ const App = () => {
         <QueueMusicIcon />
       </div>
 
-      <PlaylistListContext.Provider
+      {/* <PlaylistListContext.Provider
         value={[
           { removePlaylist: handleRemovePlaylist },
           { playVideo: handlePlayVideo },
         ]}
       >
-        <playlistList addPlaylistToPlaylistList={addPlaylistToPlaylistList} />
-      </PlaylistListContext.Provider>
+        <PlaylistList addSongToPlaylist={addSongToPlaylist} />
+      </PlaylistListContext.Provider> */}
 
       <RemoveVideoContext.Provider
         value={[
