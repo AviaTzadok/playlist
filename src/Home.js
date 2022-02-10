@@ -1,10 +1,12 @@
 import "./App.css";
 import VideoContext from "./context/VideoContext";
-import PlaylistListContext from "./context/PlaylistListContext";
+import PlaylistList from "./components/PlaylistList/PlaylistList";
+import NewPlaylistContext from "./context/NewPlaylistContext";
 import RemoveVideoContext from "./context/RemoveVideoContext";
 import { useState, useEffect } from "react";
 import Search from "./components/Search/Search";
 import VideoList from "./components/VideoList/VideoList";
+import NewPlaylist from "./components/NewPlaylist/NewPlaylist";
 import SignIn from "./components/SignIn/SignIn";
 import Playlist from "./components/Playlist/Playlist";
 import VideosOnPlaylist from "./components/VideosOnPlaylist/VideosOnPlaylist";
@@ -16,7 +18,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
 import QueueMusicIcon from "@mui/icons-material/QueueMusic";
 import LogoutIcon from "@mui/icons-material/Logout";
-import PlaylistList from "./context/PlaylistListContext";
+// import PlaylistList from "./context/PlaylistListContext";
 const App = () => {
   // const videoListData = [{ videoMetaInfo: [], selectedVideoID: null }];
 
@@ -41,6 +43,7 @@ const App = () => {
       })
         .then((res) => res.json())
         .then((data) => {
+          console.log(data);
           setPlaylistFromDB(data);
           setVideosPlaylist(data);
         });
@@ -91,13 +94,17 @@ const App = () => {
   };
 
   function send_song_to_mongo(song) {
+    let obj = {
+      name: song,
+      playlistID: localStorage.selectedPlaylist,
+    };
     fetch(`http://localhost:3001/songs`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
         authorization: `bearer ${localStorage.getItem("accessToken")}`,
       },
-      body: JSON.stringify(song),
+      body: JSON.stringify(obj),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -197,6 +204,8 @@ const App = () => {
   // }
 
   function handleRemovePlaylist() {}
+  function handleNewPlaylist() {}
+
   return (
     <div className="App">
       <Link to={`/`} id="LinkUp">
@@ -243,8 +252,18 @@ const App = () => {
           { playVideo: handlePlayVideo },
         ]}
       >
+        <PlaylistList
+          setVideosPlaylist={setVideosPlaylist}
+          handleRemoveVideo={handleRemoveVideo}
+        />
         <VideoList videosSelectd={videosSelectd} />
       </VideoContext.Provider>
+
+      <NewPlaylistContext.Provider
+        value={{ addNewPlaylist: handleNewPlaylist }}
+      >
+        <NewPlaylist NewPlaylist={NewPlaylist} />
+      </NewPlaylistContext.Provider>
     </div>
   );
 };

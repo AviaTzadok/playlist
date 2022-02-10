@@ -1,17 +1,47 @@
-// import { useEffect } from "react";
-// import Video from "../Video/Video";
-// import "./VideoLi.css";
-// const VideoList = ({ addPlaylistToPlaylistList }) => {
-//   return (
-//     <div>
-//       {/* <h3 id="titleList">Songs List</h3> */}
-//       <div className="songs_playlist">
-//         {addPlaylistToPlaylistList.map((v) => (
-//           <NewPlaylist key={v.id} id={v.id} title={v.title} image={v.image} />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
+import { useEffect, useState } from "react";
+import NewPlaylist from "../NewPlaylist/NewPlaylist";
+import PopupAddPlaylist from "../popups/PopupAddPlaylist";
+import "./PlaylistList.css";
 
-// export default VideoList;
+const VideoList = ({ setVideosPlaylist, handleRemoveVideo }) => {
+  const [playlistFromDb, setPlaylistFromDb] = useState([]);
+
+  useEffect(() => {
+    getAllPlaylist();
+  }, []);
+
+  function getAllPlaylist() {
+    fetch(`http://localhost:3001/playlist/allPlaylistImg`, {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        authorization: `bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((_data) => {
+        console.log(_data);
+        setPlaylistFromDb(_data);
+      });
+  }
+
+  return (
+    <div className="playlists">
+      <div className="songs_playlist">
+        {playlistFromDb.map((v) => (
+          <NewPlaylist
+            setVideosPlaylist={setVideosPlaylist}
+            handleRemoveVideo={handleRemoveVideo}
+            key={v._id}
+            id={v._id}
+            PlaylistName={v.PlaylistName}
+            playlistImag={v.playlistImag}
+          />
+        ))}
+      </div>
+      <PopupAddPlaylist />
+    </div>
+  );
+};
+
+export default VideoList;
