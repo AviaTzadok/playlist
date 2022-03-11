@@ -38,8 +38,8 @@
   background-color: rgba(255, 255, 255, 0);
   border: none;
   cursor: pointer;
-  margin-left: 23px;
-  margin-top: 15px;
+  margin-left: 3px;
+  margin-top: 10px;
   height: 25px;
   width: 25px;
   padding-top: 4.5px;
@@ -79,3 +79,39 @@
     #752209
   );
 }
+/* 
+#options {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  padding-top: 5px;
+  margin-left: 10px;
+  height: 25px;
+  width: 5px;
+  border-radius: 100px;
+
+  color: aquamarine;
+}
+
+#options:hover {
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    #e2762d,
+    #884620,
+    #c0a086,
+    #752209
+  );
+}
+
+#optionsIcon {
+  height: 20px;
+  width: 20px;
+  margin-left: -10px;
+  margin-top: -2.7px;
+  border: none;
+} */

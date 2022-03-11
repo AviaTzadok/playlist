@@ -1,0 +1,13 @@
+.allPlaylist {
+  /* display: flex; */
+  position: absolute;
+  left: 25%;
+  top: 90%;
+  /* height: 455px; */
+  width: 800px;
+  overflow-y: hidden;
+  background-color: rgba(255, 255, 255, 0);
+}
+.all_songs_playlist {
+  display: flex;
+}

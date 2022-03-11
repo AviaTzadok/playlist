@@ -1,6 +1,7 @@
 import "./App.css";
 import VideoContext from "./context/VideoContext";
 import PlaylistList from "./components/PlaylistList/PlaylistList";
+import AllPlaylists from "./components/AllPlaylists/AllPlaylists";
 import NewPlaylistContext from "./context/NewPlaylistContext";
 import RemoveVideoContext from "./context/RemoveVideoContext";
 import { useState, useEffect } from "react";
@@ -33,41 +34,41 @@ const App = () => {
 
   function getMyPlaylist() {
     localStorage.accessToAllVideos = true;
-    try {
-      fetch(`http://localhost:3001/songs/${"myPlaylist"}`, {
+    fetch(
+      `http://localhost:3001/playlist/playlist/${localStorage.getItem(
+        "selectedPlaylist"
+      )}`,
+      {
         method: "GET",
         headers: {
           "content-type": "application/json",
           authorization: `bearer ${localStorage.getItem("accessToken")}`,
         },
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          setPlaylistFromDB(data);
-          setVideosPlaylist(data);
-        });
-    } catch (e) {
-      console.log(e);
-      console.log("no songs on database");
-    }
-  }
-
-  function get_all_videos() {
-    localStorage.accessToAllVideos = false;
-    fetch(`http://localhost:3001/songs`, {
-      method: "GET",
-      headers: {
-        "content-type": "application/json",
-        authorization: `bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
+      }
+    )
       .then((res) => res.json())
-      .then((data) => {
-        setPlaylistFromDB(data);
-        setVideosPlaylist(data);
+      .then((_data) => {
+        console.log(_data);
+        setPlaylistFromDB(_data);
+        setVideosPlaylist(_data);
       });
   }
+
+  // function get_all_videos() {
+  //   localStorage.accessToAllVideos = false;
+  //   fetch(`http://localhost:3001/songs`, {
+  //     method: "GET",
+  //     headers: {
+  //       "content-type": "application/json",
+  //       authorization: `bearer ${localStorage.getItem("accessToken")}`,
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setPlaylistFromDB(data);
+  //       setVideosPlaylist(data);
+  //     });
+  // }
 
   const onSearch = async (videoToSearch) => {
     fetch(`http://localhost:3001/search/${videoToSearch}`, {
@@ -84,12 +85,12 @@ const App = () => {
           let obj = {
             id: item.id.videoId,
             title: item.snippet.title,
-            image: item.snippet.thumbnails.medium.url,
+            image: item.snippet.thumbnails.high.url,
           };
           arrayVideo.push(obj);
         });
-
         setVideoSelectd(arrayVideo);
+        setVideosPlaylist(PlaylistFromDB);
       });
   };
 
@@ -110,8 +111,8 @@ const App = () => {
       .then((data) => {
         if (data) {
           console.log(data);
-          setPlaylistFromDB([...videosPlaylist, data]);
-          setVideosPlaylist([...videosPlaylist, data]);
+          setPlaylistFromDB([data, ...videosPlaylist]);
+          setVideosPlaylist([data, ...videosPlaylist]);
         }
       });
   }
@@ -133,6 +134,11 @@ const App = () => {
   };
 
   function handleRemoveVideo(id) {
+    console.log(id);
+    let obj = {
+      id: id,
+      playlistID: localStorage.selectedPlaylist,
+    };
     console.log(localStorage.getItem("accessToken"));
     fetch(`http://localhost:3001/songs/`, {
       method: "DELETE",
@@ -140,10 +146,11 @@ const App = () => {
         "content-type": "application/json",
         authorization: `bearer ${localStorage.getItem("accessToken")}`,
       },
-      body: JSON.stringify([id]),
+      body: JSON.stringify(obj),
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setPlaylistFromDB(data);
         setVideosPlaylist(data);
       });
@@ -204,7 +211,6 @@ const App = () => {
   // }
 
   function handleRemovePlaylist() {}
-  function handleNewPlaylist() {}
 
   return (
     <div className="App">
@@ -213,12 +219,18 @@ const App = () => {
           <LogoutIcon />
         </button>
       </Link>
-      <div className="get_all_videos" onClick={() => get_all_videos()}>
+      {/* <div className="get_all_videos" onClick={() => get_all_videos()}>
         <SubscriptionsIcon />
-      </div>
+      </div> */}
       <div className="get_my_playlist" onClick={() => getMyPlaylist()}>
-        <QueueMusicIcon />
+        {/* <QueueMusicIcon /> */}
       </div>
+
+      <AllPlaylists
+        setPlaylistFromDB={setPlaylistFromDB}
+        setVideosPlaylist={setVideosPlaylist}
+        handleRemoveVideo={handleRemoveVideo}
+      />
 
       {/* <PlaylistListContext.Provider
         value={[
@@ -253,17 +265,18 @@ const App = () => {
         ]}
       >
         <PlaylistList
+          setPlaylistFromDB={setPlaylistFromDB}
           setVideosPlaylist={setVideosPlaylist}
           handleRemoveVideo={handleRemoveVideo}
         />
         <VideoList videosSelectd={videosSelectd} />
       </VideoContext.Provider>
 
-      <NewPlaylistContext.Provider
-        value={{ addNewPlaylist: handleNewPlaylist }}
+      {/* <NewPlaylistContext.Provider
+      value={{ addNewPlaylist: handleNewPlaylist }}
       >
         <NewPlaylist NewPlaylist={NewPlaylist} />
-      </NewPlaylistContext.Provider>
+      </NewPlaylistContext.Provider> */}
     </div>
   );
 };

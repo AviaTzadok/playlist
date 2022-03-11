@@ -6,10 +6,10 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-
+import "./PopupAddPlaylist.css";
 import { useEffect, useState, useRef } from "react";
 
-export default function PopupAddPlaylist() {
+export default function PopupAddPlaylist({ getAllPlaylist }) {
   const [open, setOpen] = React.useState(false);
   const [addParam, setAddParam] = useState("");
 
@@ -38,6 +38,7 @@ export default function PopupAddPlaylist() {
         console.log(data);
       });
     setOpen(false);
+    getAllPlaylist();
   };
 
   const handleClose = () => {
@@ -45,14 +46,20 @@ export default function PopupAddPlaylist() {
   };
 
   return (
-    <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        + New playlist
+    <div className="popupAddPlaylist">
+      <Button
+        id="addPlaylistPlus"
+        variant="outlined"
+        onClick={handleClickOpen}
+        className="addPlaylist"
+        // style={"font-size: 90px;"}
+      >
+        +
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>New playlist</DialogTitle>
+        {/* <DialogTitle>New playlist</DialogTitle> */}
         <DialogContent>
-          <DialogContentText>Enter playlist name</DialogContentText>
+          {/* <DialogContentText>Enter playlist name</DialogContentText> */}
           <TextField
             value={addParam}
             onChange={(e) => setAddParam(e.target.value)}
@@ -64,6 +71,7 @@ export default function PopupAddPlaylist() {
             type="text"
             fullWidth
             variant="standard"
+            placeholder="playlist name"
           />
         </DialogContent>
         <DialogActions>

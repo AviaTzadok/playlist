@@ -11,6 +11,7 @@ const VideosOnPlaylist = ({ videosPlaylist }) => {
             <VideoToMyPlaylist
               key={v.id}
               id={v.id}
+              _id={v._id}
               title={v.title}
               image={v.image}
             />
