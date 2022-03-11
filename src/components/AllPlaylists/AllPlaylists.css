@@ -11,3 +11,11 @@
 .all_songs_playlist {
   display: flex;
 }
+#namePlaylist2 {
+  position: absolute;
+  top: 45%;
+  right: 23%;
+  /* margin-left: 6%; */
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0);
+}

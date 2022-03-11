@@ -30,22 +30,23 @@ const VideoList = ({
   }
 
   return (
-    <div className="playlists">
+    <div>
       <h4 id="namePlaylist">הפליליסטים שלי</h4>
-
-      <div className="songs_playlist">
-        {playlistFromDb.map((v) => (
-          <NewPlaylist
-            setPlaylistFromDB={setPlaylistFromDB}
-            setVideosPlaylist={setVideosPlaylist}
-            handleRemoveVideo={handleRemoveVideo}
-            key={v._id}
-            id={v._id}
-            PlaylistName={v.PlaylistName}
-            playlistImag={v.playlistImag}
-          />
-        ))}
-        <PopupAddPlaylist getAllPlaylist={getAllPlaylist} />
+      <div className="playlists">
+        <div className="songs_playlist">
+          {playlistFromDb?.map((v) => (
+            <NewPlaylist
+              setPlaylistFromDB={setPlaylistFromDB}
+              setVideosPlaylist={setVideosPlaylist}
+              handleRemoveVideo={handleRemoveVideo}
+              key={v._id}
+              id={v._id}
+              PlaylistName={v.PlaylistName}
+              playlistImag={v.playlistImag}
+            />
+          ))}
+          <PopupAddPlaylist getAllPlaylist={getAllPlaylist} />
+        </div>
       </div>
     </div>
   );

@@ -26,21 +26,23 @@ const AllPlaylists = ({
     getAllPlaylists();
   }, []);
   return (
-    <div className="allPlaylist">
-      <h4 id="namePlaylist">כל הפליליסטים</h4>
-      <div className="all_songs_playlist">
-        {allPlaylists.map((v) => (
-          <NewPlaylist
-            setPlaylistFromDB={setPlaylistFromDB}
-            setVideosPlaylist={setVideosPlaylist}
-            handleRemoveVideo={handleRemoveVideo}
-            key={v._id}
-            id={v._id}
-            PlaylistName={v.PlaylistName}
-            playlistImag={v.playlistImag}
-            user={v.user}
-          />
-        ))}
+    <div>
+      <h4 id="namePlaylist2">כל הפליליסטים</h4>
+      <div className="allPlaylist">
+        <div className="all_songs_playlist">
+          {allPlaylists?.map((v) => (
+            <NewPlaylist
+              setPlaylistFromDB={setPlaylistFromDB}
+              setVideosPlaylist={setVideosPlaylist}
+              handleRemoveVideo={handleRemoveVideo}
+              key={v._id}
+              id={v._id}
+              PlaylistName={v.PlaylistName}
+              playlistImag={v.playlistImag}
+              user={v.user}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

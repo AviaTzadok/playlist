@@ -33,25 +33,32 @@ const App = () => {
   const [newSong, setNewSong] = useState("");
 
   function getMyPlaylist() {
+    //need fix
     localStorage.accessToAllVideos = true;
-    fetch(
-      `http://localhost:3001/playlist/playlist/${localStorage.getItem(
-        "selectedPlaylist"
-      )}`,
-      {
-        method: "GET",
-        headers: {
-          "content-type": "application/json",
-          authorization: `bearer ${localStorage.getItem("accessToken")}`,
-        },
+    if (localStorage.getItem("selectedPlaylist")) {
+      try {
+        fetch(
+          `http://localhost:3001/playlist/playlist/${localStorage.getItem(
+            "selectedPlaylist"
+          )}`,
+          {
+            method: "GET",
+            headers: {
+              "content-type": "application/json",
+              authorization: `bearer ${localStorage.getItem("accessToken")}`,
+            },
+          }
+        )
+          .then((res) => res.json())
+          .then((_data) => {
+            console.log(_data);
+            setPlaylistFromDB(_data);
+            setVideosPlaylist(_data);
+          });
+      } catch (err) {
+        console.log(err);
       }
-    )
-      .then((res) => res.json())
-      .then((_data) => {
-        console.log(_data);
-        setPlaylistFromDB(_data);
-        setVideosPlaylist(_data);
-      });
+    }
   }
 
   // function get_all_videos() {
