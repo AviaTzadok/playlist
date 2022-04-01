@@ -13,7 +13,8 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useParams, useNavigate, Link as LinkUp } from "react-router-dom";
+import { useNavigate, Link as LinkUp } from "react-router-dom";
+
 function Copyright(props) {
   return (
     <Typography
@@ -32,6 +33,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
+//Login with backend password comparison
 export default function SignIn() {
   const navigate = useNavigate();
 
@@ -43,9 +45,7 @@ export default function SignIn() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         localStorage.accessToken = data.accessToken;
-        console.log(localStorage.accessToken);
         if (data.status == 200) {
           navigate("/Home");
         }
@@ -58,7 +58,6 @@ export default function SignIn() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
 
     let name = String(data.get("username"));
     let password = String(data.get("password"));

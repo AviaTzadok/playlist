@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import "./PlaylistList.css";
 import NewPlaylist from "../NewPlaylist/NewPlaylist";
 import PopupAddPlaylist from "../popups/PopupAddPlaylist";
-import "./PlaylistList.css";
+import { useEffect, useState } from "react";
 
 const VideoList = ({
   setVideosPlaylist,
@@ -14,6 +14,7 @@ const VideoList = ({
     getAllPlaylist();
   }, []);
 
+  //View all my playlists
   function getAllPlaylist() {
     fetch(`http://localhost:3001/playlist/allPlaylistImg`, {
       method: "GET",
@@ -24,7 +25,6 @@ const VideoList = ({
     })
       .then((res) => res.json())
       .then((_data) => {
-        console.log(_data);
         setPlaylistFromDb(_data);
       });
   }

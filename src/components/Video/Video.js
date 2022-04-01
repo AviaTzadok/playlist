@@ -1,13 +1,9 @@
-import React from "react";
-import { BsPlusSquareFill } from "react-icons/bs";
 import "./Video.css";
-import { useContext, useEffect } from "react";
 import VideoContext from "../../context/VideoContext";
-// import PlayingYouTubeVideoContext from "../../context/PlayingYouTubeVideoContext";
+import { BsPlusSquareFill } from "react-icons/bs";
+import { useContext } from "react";
 
 const Video = ({ id, title, image }) => {
-  // TODO: "add to playlist";
-
   const [{ addNewVideo }, { playVideo }] = useContext(VideoContext);
   let obj = {
     id: id,

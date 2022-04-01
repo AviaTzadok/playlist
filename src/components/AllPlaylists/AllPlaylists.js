@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
-import NewPlaylist from "../NewPlaylist/NewPlaylist";
 import "./AllPlaylists.css";
+import NewPlaylist from "../NewPlaylist/NewPlaylist";
+import { useEffect, useState } from "react";
+
 const AllPlaylists = ({
   setVideosPlaylist,
   handleRemoveVideo,
@@ -8,6 +9,7 @@ const AllPlaylists = ({
 }) => {
   const [allPlaylists, setAllPlaylists] = useState([]);
 
+  //View other users' playlists
   function getAllPlaylists() {
     fetch(`http://localhost:3001/playlist/AllPlaylists`, {
       method: "GET",
@@ -18,7 +20,6 @@ const AllPlaylists = ({
     })
       .then((res) => res.json())
       .then((_data) => {
-        console.log(_data);
         setAllPlaylists(_data);
       });
   }

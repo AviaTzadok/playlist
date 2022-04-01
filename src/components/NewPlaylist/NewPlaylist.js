@@ -1,6 +1,5 @@
-import React from "react";
-import { BsYoutube, BsTrash } from "react-icons/bs";
 import "./NewPlaylist.css";
+
 const AddPlaylistToMongo = ({
   user,
   id,
@@ -8,8 +7,8 @@ const AddPlaylistToMongo = ({
   playlistImag,
   setVideosPlaylist,
   setPlaylistFromDB,
-  handleRemoveVideo,
 }) => {
+  //View the songs of the selected playlist
   function playPlaylist(id) {
     localStorage.selectedPlaylist = id;
     if (user) {
@@ -17,7 +16,6 @@ const AddPlaylistToMongo = ({
     } else {
       localStorage.accessToAllVideos = true;
     }
-    //בדיקה אם הפליליסט שלי
     fetch(`http://localhost:3001/playlist/Playlist/${id}`, {
       method: "GET",
       headers: {
@@ -27,7 +25,6 @@ const AddPlaylistToMongo = ({
     })
       .then((res) => res.json())
       .then((_data) => {
-        console.log(_data);
         setPlaylistFromDB(_data);
         setVideosPlaylist(_data);
       });
@@ -43,11 +40,6 @@ const AddPlaylistToMongo = ({
     <div className="totalPlaylist" title={PlaylistName} style={mystyle}>
       <div id="PlaylistName">{PlaylistName}</div>
       <button id="playlistVideo" onClick={() => playPlaylist(id)}></button>
-      {/* {localStorage.getItem("accessToAllVideos") == "true" && (
-        <button id="removeVideo" onClick={() => handleRemoveVideo(id)}>
-          <BsTrash />
-        </button>
-      )} */}
     </div>
   );
 };

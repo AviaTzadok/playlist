@@ -4,8 +4,6 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -13,7 +11,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useParams, useNavigate, Link as LinkIn } from "react-router-dom";
+import { useNavigate, Link as LinkIn } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -33,6 +31,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
+//Add a new user
 export default function SignUp() {
   const navigate = useNavigate();
 
@@ -44,10 +43,7 @@ export default function SignUp() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        console.log(data);
-        localStorage.accessToken = data.accessToken; //
-        console.log(localStorage.accessToken);
+        localStorage.accessToken = data.accessToken;
         if (data.status == 200) {
           navigate("/Home");
         }
@@ -56,7 +52,6 @@ export default function SignUp() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
 
     let name = String(data.get("username"));
     let password = String(data.get("password"));

@@ -1,8 +1,7 @@
-import Video from "../Video/Video";
 import "./Playlist.css";
+import Video from "../Video/Video";
+
 const VideoList = ({ videosPlaylist }) => {
-  //   debugger;
-  console.log(videosPlaylist);
   return (
     <div className="playlist">
       <div style={{ padding: "20px 0" }}>

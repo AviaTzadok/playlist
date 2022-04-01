@@ -1,10 +1,8 @@
 .playlists {
-  /* display: flex; */
   position: absolute;
   left: 25%;
-  top: 55%;
-  /* height: 455px; */
-  width: 800px;
+  top: 52%;
+  width: 51%;
   overflow-y: hidden;
 }
 .songs_playlist {
@@ -37,9 +35,8 @@
 
 #namePlaylist {
   position: absolute;
-  top: 35%;
+  top: 45%;
   right: 23%;
-  /* margin-left: 6%; */
   color: #fff;
   background-color: rgba(255, 255, 255, 0);
 }

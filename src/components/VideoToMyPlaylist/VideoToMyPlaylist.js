@@ -1,25 +1,15 @@
-import React from "react";
-import { useContext, useEffect } from "react";
 import "./VideoToMyPlaylist.css";
-import VideoContext from "../../context/VideoContext";
+import "./VideoToMyPlaylist.css";
 import RemoveVideoContext from "../../context/RemoveVideoContext";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { BsYoutube, BsTrash } from "react-icons/bs";
-import "./VideoToMyPlaylist.css";
+import { useContext } from "react";
+import { BsTrash } from "react-icons/bs";
 
+//Songs I got in search results and candidates to enter my playlist
 const VideoToMyPlaylist = ({ id, _id, title, image }) => {
   const [{ removeVideo }, { playVideo }] = useContext(RemoveVideoContext);
-  let obj = {
-    id: id,
-    title: title,
-    image: image,
-  };
-
-  function options() {}
 
   return (
     <div className="totalImagePlaylist">
-      {/* {id} */}
       <button id="playVideo" onClick={() => playVideo(id)}>
         <div className="imgSong">
           <img src={image} alt="Logo" className="songsImg" />
@@ -32,9 +22,6 @@ const VideoToMyPlaylist = ({ id, _id, title, image }) => {
           <BsTrash />
         </button>
       )}
-      {/* <button id="options" onClick={() => options(_id)}>
-        <MoreVertIcon id="optionsIcon" />
-      </button> */}
     </div>
   );
 };

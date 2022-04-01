@@ -1,14 +1,9 @@
-import YouTube from "@u-wave/react-youtube";
 import "./PlayingYouTubeVideo.css";
 
+//Play the song
 const PlayingYouTubeVideo = ({ playVideo }) => {
   if (!playVideo) {
-    // console.log("ddd");
     return <div></div>;
-  }
-
-  function onPlayerStateChange() {
-    console.log("lllllllllllllll");
   }
 
   return (
@@ -21,7 +16,6 @@ const PlayingYouTubeVideo = ({ playVideo }) => {
         allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
         title="Embedded youtube"
-        // onended="onPlayerStateChange()"
       />
     </div>
   );

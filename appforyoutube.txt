@@ -26,7 +26,6 @@ function App() {
         q: videoToSearch,
       },
     });
-    console.log(response);
 
     let items = response.data.items;
     let arrayVideo = [{ image: "", title: "", id: "" }];
@@ -38,7 +37,6 @@ function App() {
       };
       arrayVideo.push(obj);
     });
-    console.log(arrayVideo);
     setVideoSelectd(arrayVideo);
   };
 

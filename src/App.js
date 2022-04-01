@@ -1,14 +1,9 @@
 import "./App.css";
 import Home from "./Home";
 import SingIn from "./components/SignIn/SignIn";
-
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useParams,
-} from "react-router-dom";
 import SignUp from "./components/SignUp/SignUp";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 function App() {
   return (
     <div className="App">

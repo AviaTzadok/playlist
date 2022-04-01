@@ -1,6 +1,6 @@
-import { useContext, useEffect } from "react";
-import { BsSearch } from "react-icons/bs";
 import "./Search.css";
+import { BsSearch } from "react-icons/bs";
+
 function Search({ onSearch, newSong, setNewSong, filterPlaylist }) {
   return (
     <div className="form">
@@ -22,10 +22,3 @@ function Search({ onSearch, newSong, setNewSong, filterPlaylist }) {
 }
 
 export default Search;
-
-//  Video videoMetaInfo: {videoMetaInfo} selectedVideoID: {selectedVideoID}
-
-// {
-//  <div>{videoMetaInfo}</div>
-//       <div> {selectedVideoID}</div>
-// }

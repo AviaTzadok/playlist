@@ -1,10 +1,7 @@
 import "./VideosOnPlaylist.css";
-
-import { useEffect } from "react";
 import VideoToMyPlaylist from "../VideoToMyPlaylist/VideoToMyPlaylist";
-const VideosOnPlaylist = ({ videosPlaylist }) => {
-  console.log(videosPlaylist);
 
+const VideosOnPlaylist = ({ videosPlaylist }) => {
   return (
     <div>
       <div className="song-playlist">
