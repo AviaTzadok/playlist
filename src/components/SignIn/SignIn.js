@@ -59,8 +59,8 @@ export default function SignIn() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
 
-    let name = String(data.get("username"));
-    let password = String(data.get("password"));
+    let name = String(data.get("username").trim());
+    let password = String(data.get("password").trim());
     login_user({
       username: name,
       password: password,

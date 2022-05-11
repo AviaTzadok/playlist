@@ -10,6 +10,7 @@ import PlayingYouTubeVideo from "./components/PlayingYouTubeVideo/PlayingYouTube
 import LogoutIcon from "@mui/icons-material/Logout";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import playlistSongs from "./components/obj/playlistSongs";
 
 const App = () => {
   const [videosSelectd, setVideoSelectd] = useState([]);
@@ -67,6 +68,23 @@ const App = () => {
         setVideosPlaylist(PlaylistFromDB);
       });
   };
+  // for practices
+  // const onSearch = (search) => {
+  //   let arrayItems = playlistSongs;
+  //   let arrayVideo = [{ id: "", title: "", image: "" }];
+
+  //   arrayItems.map((item) => {
+  //     let obj = {
+  //       id: item.id,
+  //       title: item.title,
+  //       image: item.image,
+  //     };
+  //     arrayVideo.push(obj);
+  //   });
+
+  //   console.log(arrayVideo);
+  //   setVideoSelectd(arrayVideo);
+  // };
 
   //Add a song to a particular playlist
   const handleAddVideo = (obj) => {
@@ -150,10 +168,14 @@ const App = () => {
     getMyPlaylist();
   }, []);
 
+  function logOut() {
+    localStorage.clear();
+  }
+
   return (
     <div className="App">
       <Link to={`/`} id="LinkUp">
-        <button className="logOut">
+        <button className="logOut" onClick={() => logOut()}>
           <LogoutIcon />
         </button>
       </Link>
